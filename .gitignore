@@ -1,0 +1,6 @@
+
+/src/github.com/*
+/src/gopkg.in/*
+/bin/
+/cfg/config.yml
+.idea
