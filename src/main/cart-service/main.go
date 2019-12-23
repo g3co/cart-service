@@ -3,10 +3,13 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/boltdb/bolt"
+	"github.com/gorilla/mux"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"
 	"main/cart-service/manager"
+	"main/cart-service/repository"
 	"main/cart-service/structs"
 	"os"
 	"path/filepath"
@@ -28,9 +31,23 @@ func main() {
 
 	config := loadConfig(*c)
 
+	router := mux.NewRouter()
+
+	db, err := bolt.Open(config.DbAddress, 0600, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	m := manager.Manager{
 		Config: config,
+		Router: router,
 	}
+
+	r := new(repository.Repository)
+	r.Db = db
+	m.Repo = r
+
+	defer db.Close()
 
 	m.Run()
 }

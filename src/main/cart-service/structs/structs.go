@@ -1,10 +1,10 @@
 package structs
 
-type TestRequest struct {
-	Token string `json:"token"`
-	Body  string `json:"body"`
+type Client struct {
+	UserId int64 `json:"userId"`
 }
 
-type TestRequestBody struct {
-	RequestId int64 `json:"requestId"`
+type CartItem struct {
+	ItemId   int64 `json:"itemId"`
+	Quantity int64 `json:"quantity"`
 }

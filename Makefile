@@ -23,7 +23,9 @@ DEPS_PKGS 		:=	gopkg.in/yaml.v2 \
 					github.com/satori/go.uuid \
 					github.com/smartystreets/goconvey \
 					github.com/golang/mock/gomock \
-					github.com/golang/mock/mockgen
+					github.com/golang/mock/mockgen \
+					github.com/gorilla/mux \
+					github.com/boltdb/bolt
 
 # packages for testing
 TEST_PKGS		:=	$(MAIN_PKGS)
