@@ -19,11 +19,6 @@ type Repository struct {
 	Db *bolt.DB
 }
 
-// Init initialize repository
-func (r *Repository) Init(Db *bolt.DB) {
-	r.Db = Db
-}
-
 // AddToCart adding new items to cart
 func (r *Repository) AddToCart(userId int64, items []structs.CartItem) (err error) {
 	err = r.Db.Update(func(tx *bolt.Tx) (err error) {

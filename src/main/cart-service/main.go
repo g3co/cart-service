@@ -27,8 +27,6 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println("C is ", *c)
-
 	config := loadConfig(*c)
 
 	router := mux.NewRouter()

@@ -7,11 +7,6 @@ BINPATH			=	$(GOPATH)/bin
 GODEP			=	$(GOCMD) get
 GOTEST			=	$(GOCMD) test -v 
 GOBUILD			=	$(GOCMD) build
-GOCONVEY        =   $(BINPATH)/goconvey
-GOMOCKGEN       =   $(BINPATH)/mockgen
-
-GOCONVEY_PORT   =   8180
-GOCONVEY_TARGET =   "src/main/cart-service"
 
 export GOPATH
 
